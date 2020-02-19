@@ -265,8 +265,8 @@ class GoogLeNetPlaces205(nn.Module):
         pool5_7x7_s1    = F.avg_pool2d(inception_5b_output, kernel_size=(7, 7), stride=(1, 1), padding=(0,), ceil_mode=False, count_include_pad=False)
         pool5_drop_7x7_s1 = F.dropout(input = pool5_7x7_s1, p = 0.4000000059604645, training = self.training, inplace = True)
         return pool5_drop_7x7_s1
-        #output_stuff = nn.Softmax(pool5_drop_7x7_s1)
         #return pool5_drop_7x7_s1#, loss2_classifier_1, loss1_classifier_1        
+        # The Aux classifiers were causing errors with classification, so I commented them out in the forward function.
         
         
 cnn = GoogLeNetPlaces205()
