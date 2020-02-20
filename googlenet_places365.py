@@ -265,8 +265,8 @@ class GoogLeNetPlaces365(nn.Module):
         return pool5_drop_7x7_s1#, loss2_classifier_1, loss1_classifier_1
         
         
-cnn = GoogLeNetPlaces205()
-cnn.load_state_dict(torch.load("googlenet_places205.pth"))
+cnn = GoogLeNetPlaces365()
+cnn.load_state_dict(torch.load("googlenet_places365.pth"))
 cnn.eval()
 
 print(cnn)
